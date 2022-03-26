@@ -3,9 +3,9 @@ const  Empleado=require('../models/Usuario.model');
 
 EmpleadoCtrl.crear = async(req, res)=>{
 
-    const {nombre, apellidos, identificacion, puesto, tcontrato, jefe} = req.body;
+    const {identificacion, nombre, papellido, sapellido, sexo, puesto, tcontrato, jefe} = req.body;
     const NuevoEmpleado = new Empleado({
-        nombre, apellidos, identificacion, puesto, tcontrato, jefe
+        identificacion, nombre, papellido, sapellido, sexo,  puesto, tcontrato, jefe
     })
     const respuesta = await NuevoEmpleado.save();
     res.json({

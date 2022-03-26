@@ -2,9 +2,11 @@ const mongoose=require('mongoose')
 const {Schema}=mongoose
 
 const UsuarioSchema = new Schema({
-    nombre: String,
-    apellidos: String,
     identificacion:String,
+    nombre: String,
+    papellido: String,
+    sapellido: String,
+    sexo: String,
     puesto: String,
     tcontrato: String,
     jefe:String

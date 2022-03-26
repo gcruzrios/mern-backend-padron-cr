@@ -32,6 +32,13 @@ UserCtrl.listar = async(req, res)=>{
     }) 
 }
 
+UserCtrl.buscarId = async(req, res)=>{
+    const { CEDULA } = req.params;
+    //{$regex:".*"+CEDULA+".*"}
+    console.log(CEDULA);
+    const respuesta = await User.find({CEDULA:CEDULA});
+    res.json(respuesta)
+}
 
 
 module.exports = UserCtrl

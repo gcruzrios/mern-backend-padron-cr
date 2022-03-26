@@ -8,6 +8,6 @@ const Auth = require('../helpers/Auth');
 router.post('/crear',UserCtrl.crear);
 router.get('/listar',UserCtrl.listar);
 
-//router.get('/buscar/:cedula/:id', UserCtrl.buscarEmpleado);
+router.get('/buscar/:CEDULA', UserCtrl.buscarId);
 
 module.exports = router;

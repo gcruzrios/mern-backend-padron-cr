@@ -16,7 +16,7 @@ app.use(express.static('public'));
 
 app.use('/jefe',require('./routes/Jefe.route'));
 app.use('/empleado',require('./routes/Empleado.route'));
-app.use('/users',require('./routes/User.route'));
+app.use('/registro',require('./routes/User.route'));
 
 
 app.listen(process.env.PORT,()=>{
