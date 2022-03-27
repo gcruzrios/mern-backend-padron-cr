@@ -6,7 +6,7 @@ const jwt=require('jsonwebtoken')
 
 
 JefeCtrl.crearJefe = async(req, res)=>{
-    const {nombre, correo, contrasena} = req.body;
+    const {identificacion, nombre, papellido, sapellido, correo, contrasena} = req.body;
     const NuevoJefe = new Jefe({
         nombre, correo, contrasena
     })
@@ -32,6 +32,24 @@ JefeCtrl.crearJefe = async(req, res)=>{
         })
 
     }
+}
+
+JefeCtrl.actualizar = async(req, res)=>{
+    const id= req.params.id;
+    await Jefe.findByIdAndUpdate({ _id:id}, req.body);
+    res.json({
+       mensaje:'Usuario Administrador actualizado'
+    })
+}
+
+
+
+JefeCtrl.eliminar = async(req, res)=>{
+    const id= req.params.id;
+    await Jefe.findByIdAndRemove({ _id:id});
+    res.json({
+       mensaje:'Usuario Administrador eliminado'
+    })
 }
 
 JefeCtrl.listar = async(req, res)=>{
