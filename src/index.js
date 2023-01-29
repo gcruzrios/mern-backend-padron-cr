@@ -16,8 +16,9 @@ app.use(express.static('public'));
 
 app.use('/jefe',require('./routes/Jefe.route'));
 app.use('/empleado',require('./routes/Empleado.route'));
+app.use('/cliente',require('./routes/Cliente.route'));
 app.use('/registro',require('./routes/User.route'));
-
+app.use('/codigo',require('./routes/Codigo.route'));
 
 app.listen(process.env.PORT,()=>{
     console.log(`Servidor corriendo en puerto ${ process.env.PORT }`)
