@@ -8,9 +8,11 @@ const jwt=require('jsonwebtoken')
 JefeCtrl.crearJefe = async(req, res)=>{
     const {identificacion, nombre, papellido, sapellido, correo, contrasena} = req.body;
     const NuevoJefe = new Jefe({
-        nombre, correo, contrasena
+        identificacion, nombre, correo, papellido, sapellido, contrasena
     })
 
+    console.log(NuevoJefe);
+    
     const correojefe = await Jefe.findOne({correo:correo});
 
     if (correojefe){
